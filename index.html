@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Environmental Monitor - Complete Presentation</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1d1d1f;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #6e6e73;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .card-header {
+            padding: 24px;
+            background-color: #1d1d1f;
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .card-content {
+            padding: 24px;
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #1d1d1f;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            color: #6e6e73;
+        }
+        
+        /* Flowchart */
+        .flowchart {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            text-align: left;
+            font-weight: 500;
+            font-size: 14px;
+            color: #6e6e73;
+            padding: 16px 24px;
+            background-color: #f5f5f7;
+            border-bottom: 1px solid #d2d2d7;
+        }
+        
+        td {
+            padding: 16px 24px;
+            border-bottom: 1px solid #f5f5f7;
+            font-size: 16px;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        /* Stats */
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6e6e73;
+        }
+        
+        /* Code blocks */
+        .code-block {
+            background-color: #1d1d1f;
+            color: #f5f5f7;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: #d2d2d7;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #d2d2d7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .timeline-marker.active {
+            background-color: #0071e3;
+        }
+        
+        .timeline-marker.complete {
+            background-color: #34c759;
+        }
+        
+        .timeline-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        /* Product cards */
+        .product-versions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .product-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .product-info {
+            margin-bottom: 8px;
+        }
+        
+        .product-label {
+            font-weight: 500;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        /* Debug output */
+        .debug-output {
+            background-color: #1d1d1f;
+            color: #f5f5f7;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        
+        .debug-success {
+            color: #34c759;
+        }
+        
+        .debug-header {
+            color: #64d2ff;
+        }
+        
+        /* Priority tags */
+        .priority-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        
+        .priority-high {
+            background-color: #ff3b30;
+            color: white;
+        }
+        
+        .priority-medium {
+            background-color: #ff9500;
+            color: white;
+        }
+        
+        .priority-low {
+            background-color: #34c759;
+            color: white;
+        }
+        
+        /* Image grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Team section */
+        .team {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .team-members {
+            font-size: 18px;
+            font-weight: 500;
+            color: #6e6e73;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background-color: #e8e8ed;
+            color: #6e6e73;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Title Section -->
+        <div class="section">
+            <div class="section-header">
+                <h1 class="section-title">Smart Environmental Monitor</h1>
+                <p class="team-members">Mirac Ozcan, Paschal Ibeh, Arvin Armand</p>
+                <p style="margin-top: 10px;"><a href="https://github.com/miraccozcan/air-quality-prediction-api" target="_blank" style="color: #0071e3; text-decoration: none;">GitHub Repository</a></p>
+                <p style="margin-top: 10px;"><a href="https://drive.google.com/file/d/1PAVFYqgVsr77fczwWfITc_veBsfka4jo/view?usp=sharing" target="_blank" style="color: #0071e3; text-decoration: none;">Model Report</a></p>
+            </div>
+        </div>
+        
+        <!-- Problem Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">The Problem: Poor Indoor Air Quality</h2>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏥</div>
+                    <div class="feature-title">Health Impacts</div>
+                    <div class="feature-description">Air pollution and poor indoor air quality lead to respiratory illnesses, allergies, and long-term diseases.</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🏙️</div>
+                    <div class="feature-title">Urban Challenges</div>
+                    <div class="feature-description">Urban areas experience high pollution levels, but air quality monitoring devices remain expensive and inaccessible.</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">⏱️</div>
+                    <div class="feature-title">Lack of Prediction</div>
+                    <div class="feature-description">Existing solutions lack predictive insights, making it difficult to prevent air quality issues before they become hazardous.</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-title">Solution Needed</div>
+                    <div class="feature-description">Need for an affordable, AI-driven system to provide real-time air quality monitoring and proactive alerts.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Solution Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Our Solution</h2>
+                <p class="section-subtitle">A comprehensive IoT-based environmental monitoring solution that combines embedded sensor technology with cloud-based machine learning</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💨</div>
+                    <div class="feature-title">Low-cost Monitoring</div>
+                    <div class="feature-description">Real-time, AI-based air quality monitoring system at an affordable price point</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🌡️</div>
+                    <div class="feature-title">Comprehensive Sensing</div>
+                    <div class="feature-description">Measures temperature, humidity, pressure, CO₂ levels, and particulate matter (PM2.5 & PM10)</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-title">AI Integration</div>
+                    <div class="feature-description">Predicts air quality trends and warns users in advance of potential issues</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💾</div>
+                    <div class="feature-title">Data Storage</div>
+                    <div class="feature-description">Stores historical data for later analysis and pattern recognition</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Display Interface</div>
+                    <div class="feature-description">LCD displays real-time sensor readings in an easy-to-understand format</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔔</div>
+                    <div class="feature-title">Alert System</div>
+                    <div class="feature-description">Buzzer alert activates when unsafe air conditions are detected</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">☁️</div>
+                    <div class="feature-title">Cloud Connectivity</div>
+                    <div class="feature-description">Wi-Fi connection enables remote monitoring and data analysis</div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔥</div>
+                    <div class="feature-title">Fire Detection</div>
+                    <div class="feature-description">Advanced model detects fire conditions up to 3 minutes before conventional smoke detectors</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- System Overview Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">System Overview</h2>
+                <p class="section-subtitle">A layered architecture combining edge computing with cloud-based analysis</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Purpose</th>
+                                <th>Interface</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BME680</td>
+                                <td>Air quality, temp, humidity, pressure sensor</td>
+                                <td>I2C</td>
+                            </tr>
+                            <tr>
+                                <td>LCD</td>
+                                <td>Displays real-time air quality data</td>
+                                <td>I2C</td>
+                            </tr>
+                            <tr>
+                                <td>Buzzer</td>
+                                <td>Alerts for unsafe air quality</td>
+                                <td>GPIO</td>
+                            </tr>
+                            <tr>
+                                <td>ESP8266</td>
+                                <td>Cloud connectivity</td>
+                                <td>UART</td>
+                            </tr>
+                            <tr>
+                                <td>ENS160</td>
+                                <td>TVOC & CO₂</td>
+                                <td>I2C</td>
+                            </tr>
+                            <tr>
+                                <td>PMS5003</td>
+                                <td>Particle measurements</td>
+                                <td>UART</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Data Processing Workflow</h3>
+                </div>
+                <div class="card-content">
+                    <div class="flowchart">
+                        <img src="https://i.ibb.co/dJx1kKmQ/Frame-1.png" alt="Sensor Data Processing Workflow">
+                        <p style="text-align: center; margin-top: 10px; color: #6e6e73;">Figure: Sensor Data Processing Workflow</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hardware Component Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Hardware Component</h2>
+                <p class="section-subtitle">Edge computing with real-time data acquisition, processing, and local display</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Components Used</h3>
+                </div>
+                <div class="card-content">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">🖥️</div>
+                            <div class="feature-title">Microcontroller</div>
+                            <div class="feature-description">NXP Freedom K64F (ARM Cortex-M4F)<br>120 MHz CPU frequency<br>1 MB Flash, 256 KB RAM</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🖥️</div>
+                            <div class="feature-title">Display</div>
+                            <div class="feature-description">20x4 Character LCD with I2C interface</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🌡️</div>
+                            <div class="feature-title">Environmental Sensors</div>
+                            <div class="feature-description">BME680: Temperature, humidity, pressure, VOC<br>ENS160: AQI, TVOC, eCO2<br>PMS5003: Particulate matter</div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">📶</div>
+                            <div class="feature-title">Connectivity</div>
+                            <div class="feature-description">ESP8266 WiFi module<br>802.11 b/g/n support<br>TCP/IP stack integrated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Outputs from Sensors</h3>
+                </div>
+                <div class="card-content">
+                    <div class="image-grid">
+                        <div class="image-item">
+                            <img src="https://i.ibb.co/sdJ2FDDx/airquality.png" alt="Air Quality Data Display">
+                        </div>
+                        <div class="image-item">
+                            <img src="https://i.ibb.co/Q79WVw1Y/particle.png" alt="Particle Data Display">
+                        </div>
+                        <div class="image-item">
+                            <img src="https://i.ibb.co/mVSZCrW6/combined.png" alt="Combined View Display">
+                        </div>
+                        <div class="image-item">
+                            <img src="https://i.ibb.co/tptpwnLM/environment.png" alt="Environment Data Display">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cloud Component Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Cloud Component</h2>
+                <p class="section-subtitle">Sophisticated analysis using machine learning models and data storage</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">API Endpoints</h3>
+                </div>
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Endpoint</th>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>/</code></td>
+                                <td>GET</td>
+                                <td>API status and information</td>
+                            </tr>
+                            <tr>
+                                <td><code>/api/predict</code></td>
+                                <td>POST</td>
+                                <td>Air quality prediction</td>
+                            </tr>
+                            <tr>
+                                <td><code>/api/predict-fire</code></td>
+                                <td>POST</td>
+                                <td>Fire detection prediction</td>
+                            </tr>
+                            <tr>
+                                <td><code>/api/data/air-quality</code></td>
+                                <td>GET</td>
+                                <td>Retrieve air quality data</td>
+                            </tr>
+                            <tr>
+                                <td><code>/api/data/fire-detection</code></td>
+                                <td>GET</td>
+                                <td>Retrieve fire detection data</td>
+                            </tr>
+                            <tr>
+                                <td><code>/docs</code></td>
+                                <td>GET</td>
+                                <td>API documentation (Swagger UI)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Machine Learning Models</h3>
+                </div>
+                <div class="card-content">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-title">Air Quality Model</div>
+                            <div class="feature-description">
+                                <strong>Algorithm:</strong> Random Forest Classifier<br>
+                                <strong>Estimators:</strong> 100 decision trees<br>
+                                <strong>Max Depth:</strong> 20<br>
+                                <strong>Cross-Validation:</strong> 5-fold with stratification
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-title">Fire Detection Model</div>
+                            <div class="feature-description">
+                                <strong>Algorithm:</strong> Random Forest Classifier<br>
+                                <strong>Estimators:</strong> 150 decision trees<br>
+                                <strong>Max Depth:</strong> 25<br>
+                                <strong>Class Weighting:</strong> Balanced
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-row">
+                        <div class="stat-card">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Model Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.00</div>
+                            <div class="stat-label">Precision</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.00</div>
+                            <div class="stat-label">Recall</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.00</div>
+                            <div class="stat-label">F1 Score</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">API Test Cases</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Air Quality Test Cases</h4>
+                    <div class="code-block">
+curl -X POST http://embedapi.botechgida.com/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{"device_id": "test-device-a1", "co2": 400, "pm2_5": 8, "pm10": 15, "temperature": 21, "humidity": 45, "co2_category": 0, "pm2_5_category": 0, "pm10_category": 0, "hour": 10, "day_of_week": 3, "is_weekend": 0}'
+
+# Expected response: status: 0, is_unsafe: false
+                    </div>
+                    
+                    <h4>Fire Detection Test Cases</h4>
+                    <div class="code-block">
+curl -X POST http://embedapi.botechgida.com/api/predict-fire \
+  -H "Content-Type: application/json" \
+  -d '{"device_id": "test-device-f3", "temperature": 55, "humidity": 18, "tvoc": 2000, "eco2": 3000, "raw_h2": 45000, "raw_ethanol": 55000, "pressure": 1005, "pm1_0": 85, "pm2_5": 140, "nc0_5": 1200, "nc1_0": 600, "nc2_5": 350}'
+
+# Expected response: fire_alarm: 1, is_fire_detected: true, probability: 0.97
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Database Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Database Design</h2>
+                <p class="section-subtitle">Optimized schema for IoT sensor data storage</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Database Schema</h3>
+                </div>
+                <div class="card-content">
+                    <div class="code-block">
+CREATE TABLE IF NOT EXISTS air_quality_data (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT NOT NULL,
+    device_id TEXT,
+    co2 REAL,
+    pm2_5 REAL,
+    pm10 REAL,
+    temperature REAL,
+    humidity REAL,
+    co2_category INTEGER,
+    pm2_5_category INTEGER,
+    pm10_category INTEGER,
+    hour INTEGER,
+    day_of_week INTEGER,
+    is_weekend INTEGER,
+    prediction INTEGER,
+    probability REAL
+);
+
+                    </div>
+                    </div>
+                    <div class="card-content">
+                    <div class="code-block">
+
+
+CREATE TABLE IF NOT EXISTS fire_detection_data (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT NOT NULL,
+    device_id TEXT,
+    temperature REAL,
+    humidity REAL,
+    tvoc REAL,
+    eco2 REAL,
+    raw_h2 REAL,
+    raw_ethanol REAL,
+    pressure REAL,
+    pm1_0 REAL,
+    pm2_5 REAL,
+    nc0_5 REAL,
+    nc1_0 REAL,
+    nc2_5 REAL,
+    prediction INTEGER,
+    probability REAL
+);
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Troubleshooting Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Troubleshooting</h2>
+                <p class="section-subtitle">Common issues and their solutions</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Hardware Issues</h3>
+                </div>
+                <div class="card-content">
+                    <table>
+    <thead>
+        <tr>
+            <th>Issue</th>
+            <th>Possible Causes</th>
+            <th>Solutions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>BME680 not detected</td>
+            <td>
+                <ul>
+                    <li>I2C address mismatch</li>
+                    <li>Hardware connection issues</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Verify I2C address (0x76 or 0x77)</li>
+                    <li>Check wiring connections</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>ENS160 not responding</td>
+            <td>
+                <ul>
+                    <li>Incorrect I2C address</li>
+                    <li>Sensor in sleep mode</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Verify address (0x53)</li>
+                    <li>Send wake-up command</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>LCD Display not working</td>
+            <td>
+                <ul>
+                    <li>I2C address incorrect</li>
+                    <li>Contrast setting issue</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Verify I2C address (typically 0x27)</li>
+                    <li>Adjust contrast potentiometer</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>PMS5003 communication errors</td>
+            <td>
+                <ul>
+                    <li>Incorrect UART pins</li>
+                    <li>Baud rate mismatch</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Verify TX/RX connections</li>
+                    <li>Confirm baud rate (9600)</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Connectivity Issues</h3>
+                </div>
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Possible Causes</th>
+                                <th>Solutions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ESP8266 not responding</td>
+                                <td>
+                                    <ul>
+                                        <li>Incorrect UART pins</li>
+                                        <li>Baud rate mismatch</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Verify TX/RX connections</li>
+                                        <li>Check baud rate (115200)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WiFi connection failures</td>
+                                <td>
+                                    <ul>
+                                        <li>Incorrect credentials</li>
+                                        <li>AP out of range</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Verify SSID and password</li>
+                                        <li>Check signal strength</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Debugging Tools</h3>
+                </div>
+                <div class="card-content">
+                    <p>The firmware outputs detailed diagnostic information through the USB serial port:</p>
+                    
+                    <div class="code-block">
+# Connect to serial console (Linux/macOS)
+screen /dev/ttyACM0 115200
+
+# Alternative using minicom
+minicom -D /dev/ttyACM0 -b 115200
+                    </div>
+                    
+                    <p>Sample debug output:</p>
+                    
+                    <div class="debug-output">
+<span class="debug-header">Initializing BME680 sensor...</span>
+BME680 Chip ID: 0x61
+<span class="debug-success">Confirmed BME680 sensor</span>
+<span class="debug-success">BME680 initialized successfully</span>
+
+<span class="debug-header">Checking ENS160 at address 0x53...</span>
+Read Part ID: 0x0160
+<span class="debug-success">Success! Found ENS160 sensor (Part ID: 0x0160)</span>
+<span class="debug-success">ENS160 initialized in standard operation mode</span>
+Waiting for sensor to warm up...
+
+<span class="debug-header">Initializing PMS5003 sensor...</span>
+Sent wake-up command to PMS5003
+Sent active mode command to PMS5003
+<span class="debug-success">PMS5003 initialized successfully</span>
+
+<span class="debug-header">Testing ESP8266...</span>
+Sent: AT
+Response: [OK]
+<span class="debug-success">ESP8266 is responsive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cost Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Component Costs</h2>
+                <p class="section-subtitle">Total hardware cost breakdown</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Description</th>
+                                <th class="text-right">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LCD Display <span class="badge">I2C</span></td>
+                                <td>Freenove I2C IIC LCD 2004 Module</td>
+                                <td class="text-right">$16.95</td>
+                            </tr>
+                            <tr>
+                                <td>ENS160+AHT21 <span class="badge">TVOC</span></td>
+                                <td>Temperature, Humidity, CO2, TVOC Sensor</td>
+                                <td class="text-right">$18.69</td>
+                            </tr>
+                            <tr>
+                                <td>PMS5003 <span class="badge">PM2.5</span></td>
+                                <td>Particle Concentration Sensor</td>
+                                <td class="text-right">$41.99</td>
+                            </tr>
+                            <tr>
+                                <td>BME680 <span class="badge">Environmental</span></td>
+                                <td>Temperature, Humidity, Pressure Sensor</td>
+                                <td class="text-right">$22.84</td>
+                            </tr>
+                            <tr>
+                                <td>Active Buzzer <span class="badge">Alert</span></td>
+                                <td>3-24V Piezoelectric Buzzer Alarm</td>
+                                <td class="text-right">$9.01</td>
+                            </tr>
+                            <tr>
+                                <td>ESP8266 <span class="badge">WiFi</span></td>
+                                <td>WiFi Serial Transceiver Module</td>
+                                <td class="text-right">$9.99</td>
+                            </tr>
+                            <tr style="background-color: #f5f5f7; font-weight: 600;">
+                                <td>Total Cost</td>
+                                <td></td>
+                                <td class="text-right">$119.47</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Commercialization Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Commercialization Potential</h2>
+                <p class="section-subtitle">Market opportunity and go-to-market strategy</p>
+            </div>
+            
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="stat-value">$9.3B</div>
+                    <div class="stat-label">Projected market size by 2028</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8.2%</div>
+                    <div class="stat-label">Annual growth rate (CAGR)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">23%</div>
+                    <div class="stat-label">Smart home YoY growth</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Product Versions</h3>
+                </div>
+                <div class="card-content">
+                    <div class="product-versions">
+                        <div class="product-card">
+                            <div class="product-title">Consumer Version</div>
+                            <div class="product-price">$189.99</div>
+                            <div class="product-info">
+                                <span class="product-label">Target Market:</span> Homeowners, parents, allergy sufferers
+                            </div>
+                            <div class="product-info">
+                                <span class="product-label">Distribution:</span> Consumer electronics retailers, online
+                            </div>
+                            <div class="product-info">
+                                <span class="product-label">Packaging:</span> Eco-friendly with focus on benefits
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-title">Commercial Version</div>
+                            <div class="product-price">$249.99</div>
+                            <div class="product-info">
+                                <span class="product-label">Target Market:</span> Schools, offices, hospitals, hotels
+                            </div>
+                            <div class="product-info">
+                                <span class="product-label">Distribution:</span> B2B sales, facility management
+                            </div>
+                            <div class="product-info">
+                                <span class="product-label">Packaging:</span> Professional installation options
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Go-To-Market Strategy</h3>
+                </div>
+                <div class="card-content">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-title">Phase 1: Validation</div>
+                            <div class="feature-description">
+                                <ul>
+                                    <li>Small production run (500 units)</li>
+                                    <li>Direct-to-consumer via e-commerce</li>
+                                    <li>Collect user feedback and data</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-title">Phase 2: Expansion</div>
+                            <div class="feature-description">
+                                <ul>
+                                    <li>Scaled production (10,000+ units)</li>
+                                    <li>Retail partnerships</li>
+                                    <li>Launch B2B solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-title">Phase 3: Ecosystem</div>
+                            <div class="feature-description">
+                                <ul>
+                                    <li>Smart home platform integrations</li>
+                                    <li>Subscription service for analytics</li>
+                                    <li>Expand product line</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Future Development -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Next Iteration Plans (v2.0)</h2>
+                <p class="section-subtitle">Building on our successful prototype</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-title">Hardware Enhancements</div>
+                    <div class="feature-description">
+                        <ul>
+                            <li>Custom PCB Integration <span class="priority-tag priority-high">High</span></li>
+                            <li>Battery-Powered Operation</li>
+                            <li>Expanded Sensor Array <span class="priority-tag priority-medium">Medium</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-title">Connectivity & Interface</div>
+                    <div class="feature-description">
+                        <ul>
+                            <li>Mobile App Control <span class="priority-tag priority-high">High</span></li>
+                            <li>Smart Home Integration</li>
+                            <li>Color Touchscreen <span class="priority-tag priority-medium">Medium</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-title">AI & Software Features</div>
+                    <div class="feature-description">
+                        <ul>
+                            <li>Enhanced Prediction Model <span class="priority-tag priority-high">High</span></li>
+                            <li>Personalized Alerts</li>
+                            <li>Historical Analysis <span class="priority-tag priority-medium">Medium</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-title">Physical Design</div>
+                    <div class="feature-description">
+                        <ul>
+                            <li>Weather-Resistant Enclosure <span class="priority-tag priority-high">High</span></li>
+                            <li>Modular Design</li>
+                            <li>Wall & Surface Mounting <span class="priority-tag priority-low">Low</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker complete">✓</div>
+                    <div class="timeline-label">Concept & Planning<br>Q2 2025</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker active">2</div>
+                    <div class="timeline-label">Prototype Development<br>Q3 2025</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-label">Testing & Refinement<br>Q4 2025</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-label">Production Release<br>Q1 2026</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conclusion -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Conclusion</h2>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <div style="text-align: center; padding: 20px;">
+                        <p><strong>AI model trained & tested.</strong></p>
+                        <p><strong>Most sensors connected & functional.</strong></p>
+                        <p><strong>OLED & Wi-Fi module issues pending resolution.</strong></p>
+                        <p><strong>Buzzer and breakout board still need integration.</strong></p>
+                        <p><strong>Final integration, testing, and documentation in the upcoming weeks.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team -->
+        <div class="section">
+            <div class="team">
+                <h2>Thank You</h2>
+                <p class="team-members">Mirac Ozcan, Paschal Ibeh, Arvin Armand</p>
+                <p><a href="https://github.com/miraccozcan/air-quality-prediction-api" target="_blank" style="color: #0071e3; text-decoration: none;">GitHub Repository</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
